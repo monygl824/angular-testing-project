@@ -1,20 +1,25 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-task-list',
+  imports: [FormsModule],
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent {
 
   tasks: string[] = [];
+  nueva: string = ''; 
 
   constructor() {
     console.log('TaskListComponent initialized');
   }
 
-  addTask(task: string) {
-    console.log('Adding task:', task);
+  addTask():void {
+    this.tasks.push(this.nueva);
+    this.nueva = ''; 
+    
   }
 
   updateTask(task: string) {
@@ -23,5 +28,6 @@ export class TaskListComponent {
 
   deleteTask(task: string) {
     console.log('Deleting task:', task);
+
   }
 }

@@ -1,1 +1,10 @@
-<p>task-list works!</p>
+<ul>
+    @for (task of tasks; track task) {
+    <li>{{task}}</li>
+    }
+    <input type="text" placeholder="Agregar tarea" [(ngModel)]="nueva">
+    <button (click)="addTask()">Agregar</button>
+    <br>
+    <input type="text" placeholder="Actualizar tarea">
+    <button>Actualizar</button>
+</ul>
